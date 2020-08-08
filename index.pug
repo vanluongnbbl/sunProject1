@@ -1,0 +1,217 @@
+include constant.pug
+include constant2.pug
+doctype html
+
+head
+  meta(charset='UTF-8')
+  meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  block title
+    title Machine Company
+  link(rel='stylesheet', href='../css/responsive.css')
+  link(rel='stylesheet', href='../css/header.css')
+  link(rel='stylesheet', href='../css/style.css')
+  link(rel='stylesheet', href='../css/footer.css')
+  link(rel='stylesheet', href='../css/layout.css')
+  link(rel='stylesheet', href='../css/list-page.css')
+  link(rel='stylesheet', href='../css/detail.css')
+  link(rel='stylesheet', href='../css/register.css')
+  link(rel='stylesheet', href='../css/blog.css')
+body    
+  include header.pug
+  block main
+    .slider
+      .container
+        .row
+          .col-12.col-lg-8.slider__col
+            .carousel
+              .carousel__inner
+                input#carousel-1.carousel__open(type='radio', name='carousel', aria-hidden='true', checked='checked')
+                .carousel__item
+                  img(src='../images/SLIDER.jpg')
+                input#carousel-2.carousel__open(type='radio', name='carousel', aria-hidden='true')
+                .carousel__item
+                  img(src='../images/SLIDER.jpg')
+                input#carousel-3.carousel__open(type='radio', name='carousel', aria-hidden='true')
+                .carousel__item
+                  img(src='../images/SLIDER.jpg')
+                ol.carousel__indicators
+                  li
+                    label.carousel__bullet(for='carousel-1') &bull;
+                  li
+                    label.carousel__bullet(for='carousel-2') &bull;
+                  li
+                    label.carousel__bullet(for='carousel-3') &bull;
+
+          .col-12.col-lg-4.slider__sidebar
+            +slider-sidebar('../images/plane.png', 'plane',
+            'Miễn phí vận chuyển',
+            'Chúng tôi vận chuyển miễn phí với các đơn hàng trị giá trên 1000.000 Đ.')
+            +slider-sidebar--active('../images/reload.png', 'plane',
+            'Chính sách đổi trả',
+            'Nếu phát hiện lỗi của nhà sản xuất, chúng tôi sẽ đổi mới sản phẩm trong 7 ngày đầu tiên.')
+            +slider-sidebar('../images/plane.png', 'plane',
+            'Khuyến mại hàng tuần',
+            'Chúng tôi vận chuyển miễn phí với các đơn hàng trị giá trên 1000.000 Đ.')
+            +slider-sidebar('../images/plane.png', 'plane',
+            'Cam kết hàng chính hãng',
+            'Chúng tôi vận chuyển miễn phí với các đơn hàng trị giá trên 1000.000 Đ.')
+
+    .special-product-container
+      .container
+        .row.special-product
+          .wrap-next
+            +title-genral('../images/four-square.png', 
+            'four square icon', 
+            'Sản phẩm nổi bật')
+            .next-prev
+              button.next-prev__btn &#10094;
+              button.next-prev__btn &#10095;
+
+          .col-12.col-md-4.col-lg-3.sidebar-container
+            block sidebar
+              .sidebar
+                +sidebar-item--active("../images/danhmuc.png",
+                "four icon", "#", 'Danh mục sản phẩm')
+                for i  in sidebarItem
+                  +sidebar-item(i)         
+          .col-12.col-md-8.col-lg-9
+            .row
+              for i in productItem
+                .col-12.col-sm-6.col-md-4.product-container
+                  +product(i)
+    .container
+      .new-product-container
+        .row
+          .wrap-next
+            +title-genral('../images/four-square.png', 
+            'four square icon', 
+            'Sản phẩm Mới')
+            .tab
+                +tab-btn
+            .next-prev
+              button.next-prev__btn &#10094;
+              button.next-prev__btn &#10095;
+        .row
+          .col-12.col-sm-6.col-md-4.product-container
+            +product3('../images/product.jpg',
+              'product', '1.550.000 Đ', 
+              'Máy khoan black decker',
+              '#', 'Mua ngay', '#', 'Xem chi tiết')
+          .col-12.col-sm-6.col-md-4.product-container
+            +product3('../images/product.jpg',
+              'product', '1.550.000 Đ', 
+              'Máy khoan black decker',
+              '#', 'Mua ngay', '#', 'Xem chi tiết')
+          .col-12.col-sm-6.col-md-4.product-container
+            +product3('../images/product.jpg',
+              'product', '1.550.000 Đ', 
+              'Máy khoan black decker',
+              '#', 'Mua ngay', '#', 'Xem chi tiết')
+        .row.banner
+          .col-12.col-md-6
+            img(src="../images/banner1.jpg", alt="banner")
+          .col-12.col-md-6
+            img(src="../images/banner2.jpg", alt="banner")
+
+    .container 
+      .runout-product-container
+        .row
+          .wrap-next
+            +title-genral('../images/four-square.png', 
+            'four square icon', 
+            'Sản phẩm bán chạy')
+            .tab
+              +tab-btn
+            .next-prev
+              button.next-prev__btn &#10094;
+              button.next-prev__btn &#10095;
+        .row
+          .col-12.col-sm-6.col-md-3
+            .product-container
+              +product3('../images/product.jpg',
+                'product', '1.550.000 Đ', 
+                'Máy khoan black decker',
+                '#', 'Mua ngay', '#', 'Xem chi tiết')
+            .product-container
+              +product3('../images/product.jpg',
+                'product', '1.550.000 Đ', 
+                'Máy khoan black decker',
+                '#', 'Mua ngay', '#', 'Xem chi tiết')
+          .col-12.col-sm-6.col-md-6
+            .product-container.product-95
+              +product3('../images/product2.jpg',
+                'product', '1.550.000 Đ', 
+                'Máy khoan black decker',
+                '#', 'Mua ngay', '#', 'Xem chi tiết')
+          .col-12.col-sm-6.col-md-3
+            .product-container
+              +product3('../images/product.jpg',
+                'product', '1.550.000 Đ', 
+                'Máy khoan black decker',
+                '#', 'Mua ngay', '#', 'Xem chi tiết')
+            .product-container
+              +product3('../images/product.jpg',
+                'product', '1.550.000 Đ', 
+                'Máy khoan black decker',
+                '#', 'Mua ngay', '#', 'Xem chi tiết')
+        .row
+          .col-12.banner3
+            img(src="../images/banner3.jpg", alt="banner 3")     
+
+    .container
+      .new-order-container
+        .row   
+          .wrap-next
+            +title-genral('../images/four-square.png', 
+            'four square icon', 
+            'Hàng mới về')
+            .next-prev
+              button.next-prev__btn &#10094;
+              button.next-prev__btn &#10095;
+        .row
+          for i in productItem2
+            .col-12.col-sm-6.product-container
+              +product2(i)
+
+    .sub-slider-container
+      .container
+        .row
+          .col-12
+            .sub-carousel
+              .sub-carousel-inner
+                input#sub-carousel-1.sub-carousel-open(type='radio', name='sub-carousel', aria-hidden='true', hidden='', checked='checked')              
+                .sub-carousel-item              
+                  img(src='../images/sub-slider1.jpg')
+                  img(src='../images/sub-slider2.jpg')
+                  img(src='../images/sub-slider3.jpg')
+                  img(src='../images/sub-slider4.jpg')
+                  img(src='../images/sub-slider5.jpg')
+                input#sub-carousel-2.sub-carousel-open(type='radio', name='sub-carousel', aria-hidden='true', hidden='')
+                .sub-carousel-item
+                  img(src='../images/sub-slider1.jpg')
+                  img(src='../images/sub-slider2.jpg')
+                  img(src='../images/sub-slider3.jpg')
+                  img(src='../images/sub-slider4.jpg')
+                  img(src='../images/sub-slider5.jpg')
+                input#sub-carousel-3.sub-carousel-open(type='radio', name='sub-carousel', aria-hidden='true', hidden='')
+                .sub-carousel-item
+                  img(src='../images/sub-slider1.jpg')
+                  img(src='../images/sub-slider2.jpg')
+                  img(src='../images/sub-slider3.jpg')
+                  img(src='../images/sub-slider4.jpg')
+                  img(src='../images/sub-slider5.jpg')
+                label.carousel-control.prev.control-1(for='sub-carousel-3') &lsaquo;
+                label.carousel-control.next.control-1(for='sub-carousel-2') &rsaquo;
+                label.carousel-control.prev.control-2(for='sub-carousel-1') &lsaquo;
+                label.carousel-control.next.control-2(for='sub-carousel-3') &rsaquo;
+                label.carousel-control.prev.control-3(for='sub-carousel-2') &lsaquo;
+                label.carousel-control.next.control-3(for='sub-carousel-1') &rsaquo;
+
+    .breadcrumb-container
+      .breadcrumb
+        .breadcrumb__title Đăng ký để nhận tin tức khuyến mại hàng tuần
+        .breadcrumb__fill
+          input(type="email" placeholder="Nhập email của bạn..." ).breadcrumb__fill__input  
+          button.breadcrumb__fill__btn Đăng kí
+
+  include footer.pug

@@ -1,0 +1,121 @@
+.bread {
+    display: flex;
+    margin: 35px 0;
+
+    &__item {
+        font-size: 14px;
+        color: #363636;
+    }
+    &__item:first-child::before {
+        content: "";
+        margin: 0;
+    }
+    &__item--active {
+        color: #000;
+        font-weight: 500;
+    }
+
+    &__item::before {
+        content: "❯";
+        margin: 0 10px;
+    }
+}
+
+div.category-container {
+    margin-bottom: 100px;
+}
+
+.product-category {
+    display: flex;
+    align-items: center;
+    position: relative;
+    height: 60px;
+    border-bottom: 1px solid #e1e1e1;
+    &__filter {
+        margin-right: 30px;
+        .sort {
+            .text {
+                font-size: 14px;
+                color: #363636;
+            }
+            #product-category {
+                padding: 4px 10px;
+                width: 150px;
+                margin-left: 5px;
+                border: 1px solid #e1e1e1;
+                outline: none;
+                border-color: #898989 !important;
+                color: #898989;
+                option {
+                    font-size: 14px;
+                    color: #898989;
+                }
+            }
+        }
+    }
+
+    .show-type {
+        display: flex;
+        position: absolute;
+        right: 0;
+
+        .multiple {
+            border: 1px solid #e1e1e1;
+            padding: 4px;
+            margin-left: 10px;
+            cursor: pointer;
+        }
+    }
+}
+
+.new-order-container.category {
+    .product-container {
+        .product {
+            margin-bottom: 30px;
+            &__img {
+                width: 25%;
+            }
+            .product-inner {
+                width: 75%;
+
+                .desc {
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 3;
+                    -webkit-box-orient: vertical;
+                }
+            }
+        }
+    }
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+
+    &__item {
+        padding: 6px 13px;
+        margin-right: 5px;
+        color: #898989;
+        font-size: 13px;
+        border: 1px solid #ccc;
+    }
+
+    &__item--select {
+        color: #fff;
+        background-color: #f5bd10;
+    }
+}
+@media (max-width: 768px) {
+    div.category-container {
+        .product-category {
+            margin-bottom: 60px;
+            border-bottom: none;
+            .show-type {
+                left: 0;
+                top: 60px;
+            }
+        }
+    }
+}

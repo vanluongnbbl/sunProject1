@@ -1,0 +1,31 @@
+extends index.pug
+
+block main
+    .container
+        .bread
+            a(href="#").bread__item Trang chủ 
+            a(href="#").bread__item.bread__item--active Đăng kí
+
+        .register-container.login
+            form.register
+                .row.register__form
+                    .col-12.col-sm-6
+                        .register__title Thông tin đăng nhập:
+                        .text Họ và tên:
+                            strong *
+                        input(type="text")
+                        .text Email:
+                            strong *
+                        input(type="email")
+                        .checkbox
+                            input(type="checkbox")
+                            span Ghi nhớ đăng nhập
+                            a(href="#") Bạn quên mật khẩu ?
+                        .register__btn
+                            a(href="#").back Đăng nhập
+                    .col-12.col-sm-6
+                        .register__title Bạn chưa có tài khoản:
+                        .login-desc Đăng ký tài khoản để mua hàng nhanh hơn. Theo dõi đơn đặt hàng, vận chuyển. Cập nhật các tin tức sự kiện và các chương trình giảm giá của chúng tôi
+                        .register__btn
+                            a(href="#").submit Đăng kí
+                        

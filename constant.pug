@@ -1,0 +1,193 @@
+
+mixin social-media(src, alt)
+    .social-media__item
+        a(href="#")
+            img(src=src alt=alt)
+
+mixin navbar-item(href, item)
+    li.navbar__item
+        a(href=href)=item
+
+mixin list(...items)
+    each item in items
+        .links__item
+            a(href="#")=item
+
+mixin credit-card(src, alt)
+    .col-6.col-md-4.col-lg-3.creadit-card__item
+        img(src=src, alt=alt)
+
+mixin article(src, alt, title)
+        .links__item.link
+            .wrap-icon
+                img(src=src, alt=alt)
+            a(href="#")=title
+
+mixin slider-sidebar(src, alt, title, desc)
+    .slider__sidebar__detail
+              img(src=src, alt=alt)
+              .slider__sidebar__detail__info
+                .title=title
+                .desc=desc
+
+mixin slider-sidebar--active(src, alt, title, desc)
+    .slider__sidebar__detail.slider__sidebar__detail--active
+              img(src=src, alt=alt)
+              .slider__sidebar__detail__info
+                .title=title
+                .desc=desc
+
+mixin title-genral(src=src, alt=alt, title)
+    .wrap-title-general
+        .wrap-four-icon
+            img(src=src, alt=alt).four-icon
+        .title-general=title
+
+mixin sidebar-item(item)
+    .sidebar__item
+        .wrap-four-icon
+            img(src=item.src, alt=item.alt).four-icon
+        a(href=item.href).title=item.title
+
+mixin sidebar-blog(src, alt, href, title)
+    .sidebar__item
+        .wrap-four-icon
+            img(src=src, alt=alt).four-icon
+        a(href=href).title=title
+
+mixin sidebar-item2(item)
+    .sidebar__item
+        .wrap-four-icon
+            img(src=item.src, alt=item.alt).four-icon
+        a(href=item.href).title=item.title
+
+mixin sidebar-item-blog(item)
+    .sidebar__item     
+        a(href=item.href).title=item.title
+
+mixin sidebar-item--active(src, alt, href, title)
+    .sidebar__item.sidebar__item--active
+        .wrap-four-icon
+            img(src=src, alt=alt).four-icon
+        a(href=href).title=title
+    
+mixin sidebar-sale(item)
+    .sidebar__item.sidebar__sale
+        .wrap-four-icon
+            img(src=item.src, alt=item.alt).four-icon
+        .info
+            a(href=item.href).title=item.title
+            .price=item.price
+
+mixin rating
+    .rating-container
+        .rating.rating2
+            a(href='#5', title='Give 5 stars').rating__item &starf;
+            a(href='#4', title='Give 4 stars').rating__item &starf;
+            a(href='#3', title='Give 3 stars').rating__item &starf;
+            a(href='#2', title='Give 2 stars').rating__item &starf;
+            a(href='#1', title='Give 1 star').rating__item &starf;
+        .rating-number (12 đánh giá)
+
+mixin product(item)
+    .product
+        .product__item
+            img(src=item.src, alt=item.alt)
+            .product__price=item.price
+            .product__name=item.name
+            +rating
+            .product__btn
+                a(href=item.href1).buy-now=item.btn1
+                a(href=item.href2).view-detail=item.btn2
+
+mixin product-same(item)
+    .col-12.col-md-4.product-container
+        .product.product-same
+            .product__item
+                img(src=item.src, alt=item.alt)
+                .product__price=item.price
+                .product__name=item.name
+                +rating
+                .product__btn
+                    a(href=item.href1).buy-now=item.btn1
+                    a(href=item.href2).view-detail=item.btn2
+mixin product-grid(item)
+    - for (let i = 0; i < 18; i++)
+        .col-12.col-sm-6.col-md-4.product-container
+            .product
+                .product__item
+                    img(src=item.src, alt=item.alt)
+                    .product__price=item.price
+                    .product__name=item.name
+                    +rating
+                    .product__btn
+                        a(href=item.href1).buy-now=item.btn1
+                        a(href=item.href2).view-detail=item.btn2
+
+mixin product3(src, alt, price, name, href1, btn1, href2, btn2)
+    .product
+        .product__item
+            img(src=src, alt=alt)
+            .product__price=price
+            .product__name=name
+            +rating
+            .product__btn
+                a(href=href1).buy-now=btn1
+                a(href=href2).view-detail=btn2
+
+mixin product2(item)
+    .product.product2
+        .product__item
+            .product__img
+                img(src=item.src, alt=item.alt)
+            .product-inner  
+                .product__name=item.name 
+                +rating 
+                .desc=itemdesc
+                .product__price=item.price
+                .product__btn
+                    a(href=item.href1).buy-now=item.btn1
+                    a(href=item.href2).view-detail=item.btn2
+                                        
+
+mixin tab-btn
+    button.tab__btn.tab__btn--active Máy khoan
+    button.tab__btn Máy in 3D
+    button.tab__btn Máy CNC
+    button.tab__btn Máy tiện
+    button.tab__btn Máy khác
+
+
+mixin table-item(item1,item2,item3,item4,item5,item6,item7)          
+    tr.shopping-cart__tr
+                td.shopping-cart__item=item1
+                td.shopping-cart__item
+                    img(src=item2)
+                td.shopping-cart__item=item3
+                td.shopping-cart__item=item4
+                td.shopping-cart__item=item5
+                td.shopping-cart__item=item6
+                td.shopping-cart__item
+                    strong=item7
+
+mixin img(src)
+    img(src=src)
+    
+mixin blog(item)
+    - for (let i = 0; i < 4; i++)
+        .blog__item
+            img(src=item.src, alt=item.alt).img-post
+            a(href=item.href).blog__item__title=item.title
+            .blog__item__date
+                .date 
+                    span.text=item.text1
+                    span.text=item.text2
+                .post-by
+                    img(src=item.src2 , alt=item.alt2) 
+                    span.text=item.text3
+                    span.design=item.text4
+                .comment
+                    img(src=item.src3, alt=item.alt3)
+                    span.text=item.text5
+                    span.text=item.text6
+            .blog__item__desc=item.desc

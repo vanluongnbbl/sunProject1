@@ -1,0 +1,66 @@
+extends index.pug
+
+block main
+    .container.category-container
+        block bread
+            .bread
+                a(href="#").bread__item Trang chủ 
+                a(href="#").bread__item.bread__item--active Danh mục sản phẩm
+
+        .row
+            .col-12.col-md-4.col-lg-3.sidebar-container
+                block sidebar
+                    .sidebar
+                        +sidebar-item--active("../images/danhmuc.png",
+                        "four icon", "#", 'Danh mục sản phẩm')
+                        for i  in sidebarItem
+                            +sidebar-item(i)                       
+                    .sidebar
+                        +sidebar-item--active("../images/price.png",
+                        "price", "#", 'Tìm theo mức giá')
+                        for i in sidebarItem2
+                            +sidebar-item2(i)
+                    .sidebar               
+                        +sidebar-item--active("../images/color.png",
+                        "Color", "#", 'Tìm theo màu sắc')
+                        for i in sidebarColor
+                            +sidebar-item2(i)
+                    .sidebar
+                    +sidebar-item--active("../images/sale.png",
+                    "Color", "#", 'Sản phẩm khuyến mại')
+                    for i in sidebarSale
+                            +sidebar-sale(i)
+            .col-12.col-md-8.col-lg-9
+                block detail
+                    .product-category
+                        .product-category__filter
+                            form.sort
+                                label(for="product-category").text Sắp xếp theo: 
+                                select(name="product-category")#product-category
+                                    option(value="Tên sảm phẩm") Tên sảm phẩm
+                                    option(value="Máy khoan") Máy khoan
+                                    option(value="Máy cắt") Máy cắt
+                        .product-category__filter
+                            form.sort
+                                label(for="product-category").text Show: 
+                                select(name="product-category")#product-category
+                                    option(value="number") 9
+                                    option(value="number") 6
+                                    option(value="Number") 3
+                        .show-type
+                            .multiple
+                                img(src="../images/multiple-line.png", alt="multiple-line")
+                            .multiple
+                                img(src="../images/multiple-square.png", alt="multiple-square")
+                    block content
+                        .new-order-container.category
+                            .product-container
+                                for i in productItem2
+                                    +product2(i)
+                        
+                    .pagination
+                        a(href="#").pagination__item Trang trước
+                        a(href="#").pagination__item.pagination__item--select 1
+                        a(href="#").pagination__item 2
+                        a(href="#").pagination__item 3
+                        a(href="#").pagination__item Trang sau

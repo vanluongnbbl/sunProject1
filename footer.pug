@@ -1,0 +1,103 @@
+include constant.pug
+footer
+    .container
+        .row.wrap-links
+            .col-12.col-md-6.col-lg-4.col-xl-4.links
+                .links__title
+                    .wrap-icon
+                        img(src="../images/four-square.png", alt="four square")
+                    |Về Chúng Tôi
+                .links__desc   Công ty Cổ phần Công Nghệ DKT đã và đang khẳng định được vị trí hàng đầu
+                    |trong lĩnh vực Thương mại điện tử.
+                .links__icon
+                    .wrap-icon
+                        img(src="../images/location.png", alt="location icon")
+                    |Tầng 4 - Tòa nhà Hanoi Group 442 Đội Cấn Ba Đình - Hà Nội
+                .links__icon
+                    .wrap-icon
+                        img(src="../images/email-icon.png", alt="email icon")
+                    |support@dkt.com.vn
+                .links__icon
+                    .wrap-icon
+                        img(src="../images/mobilephone-icon.png", alt="mobile phone icon")
+                    a(href="tel:0466558868") (84-4) 66558868
+                    a(href="tel:0466558868") (84-4) 37868904
+            .col-12.col-md-6.col-lg-4.col-xl-2.links
+                .links__title
+                    .wrap-icon
+                        img(src="../images/four-square.png", alt="four square")
+                    |Chính sách
+                +list('Chính sách giao hàng', 'Chính sách đổi sản phẩm',
+                'Chính sách bảo hành', 'Chính sách trả góp',
+                'Giới thiệu hàng đổi trả', 'Vận chuyển miễn phí')
+            .col-12.col-md-6.col-lg-4.col-xl-2.links
+                .links__title
+                    .wrap-icon
+                        img(src="../images/four-square.png", alt="four square")
+                    |Chính sách
+                +list('Hệ thống cửa hàng', 'Hướng dẫn mua hàng',
+                'Hướng dẫn thanh toán', 'Tích điểm đổi thưởng',
+                'Dịch vụ đổi trả hàng', 'Câu hỏi thường gặp')
+            .col-12.col-md-6.col-lg-4.col-xl-2.links
+                .links__title
+                    .wrap-icon
+                        img(src="../images/four-square.png", alt="four square")
+                    |Chính sách
+                +list('Tin tức mới nhất', 'Tin tức khuyến mại', 'Tuyển dụng, đãi ngộ'
+                ,'Download tài liệu', 'Chương trình đối tác', 'Nhà phát triểu ứng dụng')
+            .col-12.col-md-6.col-lg-4.col-xl-2.links
+                .links__title
+                    .wrap-icon
+                        img(src="../images/four-square.png", alt="four square")
+                    |Kết nối
+                +article('../images/email-icon.png', 'email icon', 'Facebook')
+                +article('../images/email-icon.png', 'email icon', 'Twitter')
+                +article('../images/email-icon.png', 'email icon', 'Google')
+                +article('../images/email-icon.png', 'email icon', 'Skype')
+                +article('../images/email-icon.png', 'email icon', 'Instagram')
+
+        .row.wrap-credit-card
+            .col-12.col-md-6.credit-card
+                .credit-card__title Thanh toán:
+                .row.credit-card__bank
+                    +credit-card("../images/viettin-bank.jpg", "credit card")
+                    +credit-card("../images/techcom-bank.jpg", "credit card")
+                    +credit-card("../images/vp-bank.jpg", "credit card")
+                    +credit-card("../images/tienphong.jpg", "credit card")
+                    +credit-card("../images/maritime.jpg", "credit card")
+                    +credit-card("../images/donga.jpg", "credit card")
+                    +credit-card("../images/abb-bank.jpg", "credit card")
+                    +credit-card("../images/viet-capital.jpg", "credit card")
+            .col-12.col-md-6.hotline
+                .credit-card__title Giải đáp nhanh:
+                .row.hotline__row
+                    .col-12.col-sm-6.hotline__col
+                        .hotline__col__item
+                            img(src="../images/hotline.png", alt="hotline")
+                            .hotline__col__item__sub 
+                                .hotline__col__item__sub__text  Tư vấn miễn phí (24/7)
+                                a(href="tel:1900650650").hotline__col__item__sub__number 1900 650 650
+                    .col-12.col-sm-6.hotline__col
+                        .hotline__col__item
+                            img(src="../images/hotline.png", alt="hotline")
+                            .hotline__col__item__sub 
+                                .hotline__col__item__sub__text  Góp ý - phản hồi - thắc mắc
+                                a(href="tel:1900650650").hotline__col__item__sub__number 1900 650 650
+
+    .bottom-footer
+        .container
+            .row
+                .col-12.col-sm-6.bottom-footer__col
+                    .bottom-footer__col__copyright Bản quyền thuộc về
+                        strong &nbsp;Design Tem.
+                        |Phát hiện bởi
+                        strong &nbsp;Bizweb.
+                .col-12.col-sm-6.bottom-footer__col
+                    ul.navbar-footer
+                        +navbar-item('index.html','Trang chủ')
+                        +navbar-item('#','Giới thiệu')
+                        +navbar-item('list-page','Sản phẩm')
+                        +navbar-item('#','Tin khuyến mại')
+                        +navbar-item('#','Dịch vụ')
+                        +navbar-item("#",'Liên hệ')  
+                    

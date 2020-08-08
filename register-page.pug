@@ -1,0 +1,47 @@
+extends index.pug
+
+block main
+    .container
+        .bread
+            a(href="#").bread__item Trang chủ 
+            a(href="#").bread__item.bread__item--active Đăng kí
+
+        .register-container
+            form.register
+                .register__title Thông tin cá nhân:
+                .row.register__form
+                    .col-12.col-sm-6
+                        .text Họ và tên:
+                            strong *
+                        input(type="text")
+                    .col-12.col-sm-6
+                        .text Email:
+                            strong *
+                        input(type="email")
+                    .col-12.col-sm-6
+                        .text Số điện thoại:
+                            strong *
+                        input(type="text")
+                    .col-12.col-sm-6
+                        .text Địa chỉ:
+                            strong *
+                        input(type="email")
+                .checkbox
+                    input(type="checkbox")
+                    span Đăng kí nhận tin tức qua email            
+                    
+                .register__title Thông tin đăng nhập:
+                .row.register__form
+                    .col-12.col-sm-6
+                        .text Họ và tên:
+                            strong *
+                        input(type="text")
+                    .col-12.col-sm-6
+                        .text Email:
+                            strong *
+                        input(type="email")
+
+                .register__btn
+                    a(href="#").back Quay lại
+                    a(href="#").submit Đăng kí
+    

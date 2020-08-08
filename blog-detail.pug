@@ -1,0 +1,157 @@
+extends index.pug
+
+block main
+    .container
+        .blog-container
+            .bread
+                a(href="#").bread__item Trang chủ 
+                a(href="#").bread__item.bread__item--active Tin tức
+
+            .row
+                .col-12.col-md-4.col-lg-3.sidebar-container
+                    .sidebar
+                        +sidebar-item--active("../images/four-square.png",
+                        "four icon", "#", 'Máy khoan, cắt CNC')
+                        for i  in sidebarItem
+                            +sidebar-item(i)
+                    
+                    .sidebar.sidebar-blog
+                        +sidebar-blog("../images/four-square.png",
+                        "four icon", "#", 'Danh mục tin tức')
+                        for i in sidebarItemBlog
+                            +sidebar-item-blog(i)
+                    .sidebar.sidebar-image
+                        +sidebar-item("../images/four-square.png",
+                        "four icon", "#", 'Thư viện hình ảnh')    
+                        .libary-img
+                            img(src="../images/libary1.jpg", alt="image")
+                            img(src="../images/libary2.jpg", alt="image")
+                            img(src="../images/libary3.jpg", alt="image")
+                            img(src="../images/libary1.jpg", alt="image")
+                            img(src="../images/libary2.jpg", alt="image")
+                            img(src="../images/libary3.jpg", alt="image")
+                    .sidebar.sidebar-image
+                        +sidebar-item("../images/four-square.png",
+                        "four icon", "#", 'Thẻ tags')
+                        .tags
+                            .tags__item.tags__item--selected thời trang
+                            .tags__item máy khoan
+                            .tags__item news
+                            .tags__item công nghiệp 
+                            .tags__item xây dựng
+                            .tags__item phay
+                            .tags__item máy cắt
+                            .tags__item hóa chất
+
+                .col-12.col-md-8.col-lg-9.blog.blog-detail
+                    .blog__item
+                        img(src="../images/blog.jpg", alt="blog image").img-post
+                        a(href="#").blog__item__title
+                            |thế hệ máy khoan cắt cnc đầu tiên đã được tái sử dụng
+                        .blog__item__date
+                            .date 
+                                span.text Thư năm, ngày 
+                                span.text 23/10/2015 8:00 AM
+                            .post-by
+                                img(src="../images/post-by-icon.png", alt="icon") 
+                                span.text Đăng bởi &nbsp;
+                                span.design Design Team
+                            .comment
+                                img(src="../images/comment-icon.png", alt="comment icon")
+                                span.text 12
+                                span.text Bình luận
+                        p.blog__item__desc
+                            |Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?
+                            |Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?
+                        p.blog__item__desc
+                            |Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?
+                            |Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?
+                        .blog-detail__img
+                            img(src="../images/blog-detail.jpg", alt="blog detail")
+                        p.blog__item__desc
+                            |Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?
+                            |Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?
+                        p.blog__item__desc
+                            |Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?
+                            |Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?
+                        .blog-detail__img
+                            img(src="../images/blog-detail.jpg", alt="blog detail")
+                    .wrap-tags-share    
+                        .tags-share
+                            .tags-share__detail
+                                .title Tags: 
+                                .tags-share__detail__item.tags-share__detail__item--active máy cắt cnc
+                                .tags-share__detail__item máy in 3D
+                                .tags-share__detail__item công nghiệp
+                                .tags-share__detail__item hàn xì
+                                .tags-share__detail__item uống thép...
+                        .share
+                            .share__detail
+                                .title Chia sẻ:
+                                .share-icon.share-icon--active 
+                                    img(src="../images/socials/facebook.png", alt="facebook icon")
+                                .share-icon
+                                    img(src="../images/socials/google-plus.png", alt="google icon")
+                                .share-icon
+                                    img(src="../images/socials/instagram.png", alt="instagram icon")
+                                .share-icon
+                                    img(src="../images/socials/twitter.png", alt="twitter icon")
+                    .wrap-comment-detail
+                        .comment-detail
+                            .title Bình luận:
+
+                            .comment
+                                .avatar
+                                    img(src="../images/avatar.jpg", alt="avatar")
+                                .comment__content
+                                    .comment__content__name Hoang Truong Anh
+                                    .comment__content__date
+                                        span.text Thư năm, ngày
+                                        span.text 23/10/2015 8:00 AM
+                                        .reply Trả lời
+                                    p.comment__content__desc
+                                        |Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates aut possimus, expedita consequuntur fuga amet nesciunt quasi obcaecati exercitationem veniam cumque, velit, error eligendi. Nulla laudantium vel iusto nemo reprehenderit?
+                        .comment-detail.comment-detail2
+                            .comment
+                                .avatar
+                                .comment-detail2-ava
+                                    .avatar
+                                        img(src="../images/avatar.jpg", alt="avatar")
+                                    .comment__content
+                                        .comment__content__name Hoang Truong Anh
+                                        .comment__content__date
+                                            span.text Thư năm, ngày
+                                            span.text 23/10/2015 8:00 AM
+                                            .reply Trả lời
+                                        p.comment__content__desc
+                                            |Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates aut possimus, expedita consequuntur fuga amet nesciunt quasi obcaecati exercitationem veniam cumque, velit, error eligendi. Nulla laudantium vel iusto nemo reprehenderit?
+                        .comment-detail
+                            .comment
+                                .avatar
+                                    img(src="../images/avatar.jpg", alt="avatar")
+                                .comment__content
+                                    .comment__content__name Hoang Truong Anh
+                                    .comment__content__date
+                                        span.text Thư năm, ngày
+                                        span.text 23/10/2015 8:00 AM
+                                        .reply Trả lời
+                                    p.comment__content__desc
+                                        |Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates aut possimus, expedita consequuntur fuga amet nesciunt quasi obcaecati exercitationem veniam cumque, velit, error eligendi. Nulla laudantium vel iusto nemo reprehenderit?
+                    
+                    .write-comment
+                        .title Viết bình luận của bạn:
+                        form.register-container
+                            .row.register__form
+                                .col-12.col-sm-6
+                                    .text Họ và tên:
+                                        strong *
+                                    input(type="text")
+                                .col-12.col-sm-6
+                                    .text Email:
+                                        strong *
+                                    input(type="email")
+                                .col-12
+                                    .text Bình luận
+                                    textarea(name="comment", cols="30", rows="10")
+                            .register__btn
+                                a(href="#").submit Gửi bình luận

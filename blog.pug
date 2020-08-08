@@ -1,0 +1,128 @@
+extends index.pug
+
+block main
+    .container
+        .blog-container
+            .bread
+                a(href="#").bread__item Trang chủ 
+                a(href="#").bread__item.bread__item--active Tin tức
+
+            .row
+                .col-12.col-md-4.col-lg-3.sidebar-container
+                    .sidebar
+                        +sidebar-item--active("../images/four-square.png",
+                        "four icon", "#", 'Máy khoan, cắt CNC')
+                        for i  in sidebarItem
+                            +sidebar-item(i)
+                    
+                    .sidebar.sidebar-blog
+                        +sidebar-blog("../images/four-square.png",
+                        "four icon", "#", 'Danh mục tin tức')
+                        for i in sidebarItemBlog
+                            +sidebar-item-blog(i)
+                    .sidebar.sidebar-image
+                        +sidebar-item("../images/four-square.png",
+                        "four icon", "#", 'Thư viện hình ảnh')    
+                        .libary-img
+                            img(src="../images/libary1.jpg", alt="image")
+                            img(src="../images/libary2.jpg", alt="image")
+                            img(src="../images/libary3.jpg", alt="image")
+                            img(src="../images/libary1.jpg", alt="image")
+                            img(src="../images/libary2.jpg", alt="image")
+                            img(src="../images/libary3.jpg", alt="image")
+                    .sidebar.sidebar-image
+                        +sidebar-item("../images/four-square.png",
+                        "four icon", "#", 'Thẻ tags')
+                        .tags
+                            .tags__item.tags__item--selected thời trang
+                            .tags__item máy khoan
+                            .tags__item news
+                            .tags__item công nghiệp 
+                            .tags__item xây dựng
+                            .tags__item phay
+                            .tags__item máy cắt
+                            .tags__item hóa chất
+
+                .col-12.col-md-8.col-lg-9.blog
+                    for i in blogItem
+                        +blog(i)
+                    //- .blog__item
+                    //-     img(src="../images/blog.jpg", alt="blog image").img-post
+                    //-     a(href="#").blog__item__title
+                    //-         |thế hệ máy khoan cắt cnc đầu tiên đã được tái sử dụng
+                    //-     .blog__item__date
+                    //-         .date 
+                    //-             span.text Thư năm, ngày 
+                    //-             span.text 23/10/2015 8:00 AM
+                    //-         .post-by
+                    //-             img(src="../images/post-by-icon.png", alt="icon") 
+                    //-             span.text Đăng bởi &nbsp;
+                    //-             span.design Design Team
+                    //-         .comment
+                    //-             img(src="../images/comment-icon.png", alt="comment icon")
+                    //-             span.text 12
+                    //-             span.text Bình luận
+                    //-     .blog__item__desc
+                    //-         |Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?
+                    //- .blog__item
+                    //-     img(src="../images/blog.jpg", alt="blog image").img-post
+                    //-     a(href="#").blog__item__title
+                    //-         |thế hệ máy khoan cắt cnc đầu tiên đã được tái sử dụng
+                    //-     .blog__item__date
+                    //-         .date 
+                    //-             span.text Thư năm, ngày 
+                    //-             span.text 23/10/2015 8:00 AM
+                    //-         .post-by
+                    //-             img(src="../images/post-by-icon.png", alt="icon") 
+                    //-             span.text Đăng bởi &nbsp;
+                    //-             span.design Design Team
+                    //-         .comment
+                    //-             img(src="../images/comment-icon.png", alt="comment icon")
+                    //-             span.text 12
+                    //-             span.text Bình luận
+                    //-     .blog__item__desc
+                    //-         |Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?
+                    //- .blog__item
+                    //-     img(src="../images/blog.jpg", alt="blog image").img-post
+                    //-     a(href="#").blog__item__title
+                    //-         |thế hệ máy khoan cắt cnc đầu tiên đã được tái sử dụng
+                    //-     .blog__item__date
+                    //-         .date 
+                    //-             span.text Thư năm, ngày 
+                    //-             span.text 23/10/2015 8:00 AM
+                    //-         .post-by
+                    //-             img(src="../images/post-by-icon.png", alt="icon") 
+                    //-             span.text Đăng bởi &nbsp;
+                    //-             span.design Design Team
+                    //-         .comment
+                    //-             img(src="../images/comment-icon.png", alt="comment icon")
+                    //-             span.text 12
+                    //-             span.text Bình luận
+                    //-     .blog__item__desc
+                    //-         |Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?
+
+                    //- .blog__item
+                    //-     img(src="../images/blog.jpg", alt="blog image").img-post
+                    //-     a(href="#").blog__item__title
+                    //-         |thế hệ máy khoan cắt cnc đầu tiên đã được tái sử dụng
+                    //-     .blog__item__date
+                    //-         .date 
+                    //-             span.text Thư năm, ngày 
+                    //-             span.text 23/10/2015 8:00 AM
+                    //-         .post-by
+                    //-             img(src="../images/post-by-icon.png", alt="icon") 
+                    //-             span.text Đăng bởi &nbsp;
+                    //-             span.design Design Team
+                    //-         .comment
+                    //-             img(src="../images/comment-icon.png", alt="comment icon")
+                    //-             span.text 12
+                    //-             span.text Bình luận
+                    //-     .blog__item__desc
+                    //-         |Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam possimus totam esse! Odit sed suscipit quia nesciunt voluptatibus totam ipsa in, ea, rerum dolore debitis ipsam iste dolorum ratione aliquam?
+
+                    .pagination
+                        a(href="#").pagination__item Trang trước
+                        a(href="#").pagination__item.pagination__item--select 1
+                        a(href="#").pagination__item 2
+                        a(href="#").pagination__item 3
+                        a(href="#").pagination__item Trang sau

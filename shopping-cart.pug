@@ -1,0 +1,41 @@
+extends index.pug
+
+block main
+    .container
+        .bread
+            a(href="#").bread__item Trang chủ 
+            a(href="#").bread__item.bread__item--active Giỏ hàng
+
+        .shopping-cart.table1
+            table.shopping-cart__table
+                tr.shopping-cart__tr
+                    td.shopping-cart__item Stt
+                    td.shopping-cart__item sản phẩm
+                    td.shopping-cart__item thông tin
+                    td.shopping-cart__item đơn giá
+                    td.shopping-cart__item số lượng
+                    td.shopping-cart__item thành tiền
+                    td.shopping-cart__item xóa
+                +table-item('1', '../images/cart.jpg',
+                'máy khoan, cắt đa năng cnc', '2.350.00 Đ',
+                '1', '2.350.00 Đ', 'x')
+                +table-item('2', '../images/cart.jpg',
+                'máy khoan, cắt đa năng cnc', '2.350.00 Đ',
+                '1', '2.350.00 Đ', 'x')
+                +table-item('3', '../images/cart.jpg',
+                'máy khoan, cắt đa năng cnc', '2.350.00 Đ',
+                '1', '2.350.00 Đ', 'x')
+            table.shopping-cart__table.table-2
+                tr.shopping-cart__tr
+                    td.shopping-cart__item.item1 Tổng tiền:
+                    td.shopping-cart__item.item2 6.850.000 Đ
+                tr.shopping-cart__tr
+                    td.shopping-cart__item.item1 Thuế(VAT):
+                    td.shopping-cart__item.item2 6.850.000 Đ
+                tr.shopping-cart__tr
+                    td.shopping-cart__item.item1 Thanh toán:
+                    td.shopping-cart__item.payment.item2 7.850.000 Đ
+            .shopping-cart__btn
+                button.next Tiếp tục mua hàng
+                button.pay Thanh toán
+                        

@@ -1,0 +1,90 @@
+extends list-page.pug
+
+block bread
+    .bread
+        a(href="#").bread__item Trang chủ 
+        a(href="#").bread__item Danh mục sản phẩm
+        a(href="#").bread__item.bread__item--active Máy khoan CNC 3D
+
+block sidebar
+    .sidebar
+        +sidebar-item--active("../images/danhmuc.png",
+        "four icon", "#", 'Danh mục sản phẩm')
+        for i  in sidebarItem
+            +sidebar-item(i)  
+
+    .sidebar
+        +sidebar-item--active("../images/sale.png",
+        "Color", "#", 'Sản phẩm khuyến mại')
+        for i in sidebarSale
+            +sidebar-sale(i)
+block detail
+    .detail-container
+        .row
+            .col-12.col-md-5
+                .detail
+                    .detail__img
+                        img(src="../images/detail-product.jpg", alt="detail product")
+                    .detail__subimg
+                        img(src="../images/detail-sub.jpg", alt="detail product")
+                        img(src="../images/detaib-sub1.jpg", alt="detail product")
+                        img(src="../images/detail-sub2.jpg", alt="detail product")
+                        img(src="../images/detail-sub3.jpg", alt="detail product")
+                        img(src="../images/detail-sub4.jpg", alt="detail product")
+            .col-12.col-md-7
+                .product
+                    .product__name Máy khoan CNC 3D
+                    .product__rate
+                        +rating
+                        .col-line |
+                        .comment Gủi bình luận của bạn
+                    .product__price GNY: 2.350.000 Đ
+                    .product__info
+                        .product__info__title Thông tin sản phẩm
+                        .product__info__desc Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat necessitatibus aperiam voluptatibus sit unde sequi a nihil ullam mollitia explicabo officiis consequuntur illo impedit pariatur rem, optio facilis velit. Nihil.
+                    .product__select
+                        .product__select__item
+                            .text Size:
+                            form
+                                select(name="size")
+                                    option(value="size" selected disabled) --Chọn size--
+                                    option(value="size") 12
+                                    option(value="size") 14
+                        .product__select__item
+                            .text Màu sắc:
+                            form
+                                select(name="size")
+                                    option(value="size" selected disabled) --Chọn màu--
+                                    option(value="size") red
+                                    option(value="size") blue
+                    .product__order
+                        input(type="number" placeholder="1")
+                        button Mua ngay
+                    .product__share
+                        img(src="../images/share.jpg", alt="share")
+        .row
+            .col-12
+                .detail-tabs
+                    .detail-tabs__btn
+                        button.detail-tabs__btn__inner.detail-tabs__btn__inner--active Thông tin sản phẩm
+                        button.detail-tabs__btn__inner Đánh giá
+                        button.detail-tabs__btn__inner Nhận xét
+                .detail-desc
+                    |Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, sed nesciunt! Quo animi recusandae laborum reiciendis. Magnam ut rerum sed ipsum cupiditate distinctio praesentium. Quia a distinctio consequatur dicta pariatur!
+                    |Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, sed nesciunt! Quo animi recusandae laborum reiciendis. Magnam ut rerum sed ipsum cupiditate distinctio praesentium. Quia a distinctio consequatur dicta pariatur!
+                    |Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, sed nesciunt! Quo animi recusandae laborum reiciendis. Magnam ut rerum sed ipsum cupiditate distinctio praesentium. Quia a distinctio consequatur dicta pariatur!
+                    |Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, sed nesciunt! Quo animi recusandae laborum reiciendis. Magnam ut rerum sed ipsum cupiditate distinctio praesentium. Quia a distinctio consequatur dicta pariatur!
+                    |Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, sed nesciunt! Quo animi recusandae laborum reiciendis. Magnam ut rerum sed ipsum cupiditate distinctio praesentium. Quia a distinctio consequatur dicta pariatur!
+                    |Lorem ipsum dolor sit amet consectetur, adipisicing elit. Distinctio, sed nesciunt! Quo animi recusandae laborum reiciendis. Magnam ut rerum sed ipsum cupiditate distinctio praesentium. Quia a distinctio consequatur dicta pariatur!
+        .row
+            .same-product
+                .wrap-next
+                    +title-genral('../images/four-square.png', 
+                    'four square icon', 
+                    'Sản phẩm tương tự')
+                    .next-prev
+                        button.next-prev__btn &#10094;
+                        button.next-prev__btn &#10095;
+        .row
+            for i in productSame
+                +product-same(i)

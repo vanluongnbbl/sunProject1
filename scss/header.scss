@@ -1,0 +1,185 @@
+html {
+    font-family: sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+        "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+a {
+    text-decoration: none;
+}
+
+%flexCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+$primary-border: 1px solid #e1e1e1;
+
+header {
+    .top-header {
+        height: 50px;
+        border-bottom: $primary-border;
+        position: relative; // chỉnh vị trí so với chính nó
+        background-color: #f7f7f7;
+        .container {
+            position: relative;
+            .social-media {
+                display: flex;
+                &__item:first-child {
+                    border-left: $primary-border;
+                    background-color: #f5bd10;
+                }
+                &__item {
+                    width: 50px;
+                    height: 50px;
+                    border-bottom: $primary-border;
+                    border-right: $primary-border;
+                    @extend %flexCenter;
+                }
+            }
+
+            .login-sign-up {
+                position: absolute; // chỉnh vị trí so với position relative gần nhất
+                right: 0;
+                display: flex;
+                &__item:first-child {
+                    border-left: $primary-border;
+                }
+                &__item {
+                    font-size: 12px;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    padding: 16px;
+                    border-right: $primary-border;
+
+                    @extend %flexCenter;
+                    a {
+                        color: #363636;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-header {
+        display: flex;
+        flex: 1;
+        .logo-brand {
+            flex: 1;
+            img {
+                width: 140px;
+                height: 92px;
+            }
+        }
+        .wrapper-contacts {
+            flex: 2;
+            @extend %flexCenter;
+            .contacts {
+                margin-right: 60px;
+                &__title {
+                    color: #f7cb5e;
+                    font-weight: bold;
+                    text-transform: uppercase;
+                    font-size: 14px;
+                }
+                &__info {
+                    a {
+                        color: #9c9c9c;
+                    }
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .search-information {
+            flex: 1;
+            @extend %flexCenter;
+            position: relative;
+            input {
+                padding: 8px 25px;
+                width: 320px;
+                border-radius: 20px;
+                border: $primary-border;
+                outline: none;
+            }
+            img {
+                position: absolute;
+                right: 20px;
+                cursor: pointer;
+            }
+        }
+    }
+
+    nav.navbar-wrapper {
+        background-color: #202020;
+        height: 70px;
+        .navbar {
+            position: relative;
+            ul {
+                display: flex;
+                list-style: none;
+                position: relative;
+                left: -40px;
+                height: 70px;
+                .navbar__item:first-child {
+                    border-left: 1px solid #363636;
+                }
+                .navbar__item {
+                    display: flex;
+                    align-items: center;
+                    height: 70px;
+                    color: #ffffff;
+                    font-size: 14px;
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    padding: 0 25px;
+                    border-right: 1px solid #363636;
+                    a {
+                        color: #ffffff;
+                    }
+                }
+                .navbar--active {
+                    background-color: #f5bd10;
+                }
+            }
+            .cart {
+                position: absolute;
+                top: 0;
+                right: 0;
+                border-left: 1px solid #363636;
+                border-right: 1px solid #363636;
+                padding: 22px;
+                img {
+                    width: 22px;
+                    height: 21px;
+                    cursor: pointer;
+                }
+
+                &__number {
+                    position: absolute;
+                    top: 6.5px;
+                    right: 6.5px;
+                    border: 1px solid #f5bd10;
+                    background-color: #f5bd10;
+                    border-radius: 11px;
+                    color: #ffffff;
+                    width: 22px;
+                    height: 22px;
+                    @extend %flexCenter;
+                }
+            }
+        }
+    }
+}

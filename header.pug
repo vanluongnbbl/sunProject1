@@ -1,0 +1,59 @@
+include constant.pug
+
+
+header
+  .top-header
+    // Social media / login-sign up
+    .container
+      .row
+        .social-media
+          +social-media('../images/socials/facebook.png', 'facebook-icon')
+          +social-media('../images/socials/google-plus.png', 'google-plus-icon')
+          +social-media('../images/socials/instagram.png', 'instagram-icon')
+          +social-media('../images/socials/twitter.png', 'twitter-icon')
+        .login-sign-up
+          .login-sign-up__item
+            a(href='register-page.html') Đăng ký
+          .login-sign-up__item
+            a(href='login.html') Đăng nhập
+  // logo brand
+  .container
+    .main-header
+      .logo-brand
+        a(href='')
+          img(src='../images/Logo.png', alt='logo-brand')
+      .wrapper-contacts
+        .contacts
+          .contacts__title Hotline: 
+          .contacts__info
+            a(href='tel:0495009650') (04) 9500 9650
+            |  - 
+            a(href='tel:0495008850') (04) 9500 8850
+        .contacts
+          .contacts__title &Dstrok;&#x1EB7;t h&agrave;ng nhanh: 
+          .contacts__info
+            a(href='tel:0495009650') (04) 9500 9650
+            |  - 
+            a(href='tel:0495008850') (04) 9500 8850
+      .search-information
+        input(type='text', placeholder='Tìm kiếm...')
+        img(src='../images/search-icon.png', alt='search-icon')
+  // Navigation
+  nav.navbar-wrapper
+    .container   
+      .navbar
+        input(type="checkbox")#menuToggle
+        label(for="menuToggle").menu-icon
+          img(src="../images/menu-icon.png", alt="menu icon")
+        ul.navbar__menu
+            li.navbar__item.navbar--active
+                a(href="#") Trang chủ
+            +navbar-item('#', 'Giới thiệu')
+            +navbar-item('#', 'Sản phẩm')
+            +navbar-item('#', 'Tin khuyến mại')
+            +navbar-item('#', 'Dịch vụ')
+            +navbar-item('#', 'Liên hệ')
+        .cart
+            img(src='../images/cart.png', alt='cart')
+            .cart__number 0
+
